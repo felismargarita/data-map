@@ -1,0 +1,30 @@
+.main-logo {
+  color: $primary-color;
+  font-size: 60px;
+  display: inline-block;
+}
+
+.logo-rotate-z {
+  animation: logoRotate linear 3s infinite;
+}
+
+@keyframes logoRotate {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
