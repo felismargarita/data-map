@@ -26,21 +26,16 @@ service.interceptors.response.use(
     const res = response.data;
     if (res.code === 200) {
       return res.data;
-    }if(res.code === 402){
+    }if(res.code === 20011){
       window.location.href='/login'
     }
     else {
-      if(process.env.DEBUG_MODE){
-        const message = JSON.stringify(res)
-        copy(message)
-        notification.info({message})
-      }
-      message.error(res.message)
+      message.error(res.msg)
       return Promise.reject(res)
     }
   },
   error => {
-    message.error(error.message||'系统超时,请稍后再试')
+    message.error(error.msg||'系统超时,请稍后再试')
     return Promise.reject(error)
   }
 );

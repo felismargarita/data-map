@@ -5,6 +5,13 @@ export default defineConfig({
     type: 'none',
   },
   hash:true,
+  proxy:{
+    '/api': {
+      target: 'http://localhost:8080',
+      pathRewrite: { '^/api': '' },
+      changeOrigin: true
+    },
+  },
   routes: [
     { path: '/login',component:'@/pages/Login'},
     { path: '/', component: '@/pages/index' },
